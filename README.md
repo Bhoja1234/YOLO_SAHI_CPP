@@ -9,8 +9,20 @@ onnx model inference using SAHI
 - CUDA 12.5
 - OS: windows11 x64（x86不支持CUDA）
 
+## 结果对比
+左边为没开启SAHI，右边为开启SAHI
+<p align="center">
+    <a href="result/no_sahi_1"><img src="result/no_sahi_1.jpg" style="width:40%; height:40%;"/></a>
+    <a href="result/sahi_1"><img src="result/sahi_1.jpg" style="width:40%; height:40%;"/></a>
+</p>
+<p align="center">
+    <a href="result/no_sahi_2"><img src="result/no_sahi_2.jpg" style="width:40%; height:40%;"/></a>
+    <a href="result/sahi_2"><img src="result/sahi_2.jpg" style="width:40%; height:40%;"/></a>
+</p>
+
 ## 心得
-如果图片中有大目标的时候（比如人物特写的照片），使用SAHI会导致检测效果割裂。对于中等大小的物体，会因为分割图片而导致该物体被若干个不相交的矩形框给框住。  
+如果图片中有大目标的时候（比如人物特写的照片），使用SAHI会导致检测效果割裂。  
+对于中等大小的物体，会因为分割图片而导致该物体被若干个不相交的矩形框给框住。  
 只有当使用场景全部是小目标的时候，使用SAHI会获得非常好的效果。  
 SAHI好像只支持检测模型，对于分割模型的Mask图不太好操作
 
